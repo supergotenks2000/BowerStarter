@@ -1,4 +1,4 @@
-﻿/// <binding Clean='clean' />
+﻿/// <binding Clean='clean' ProjectOpened='less-watch' />
 "use strict";
 
 var gulp = require("gulp"),
@@ -20,14 +20,10 @@ paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 
-gulp.task("less", function () {
-    return gulp.src('Less/main.less')
-            .pipe(watchLess("Less/main.less", {
-                name: "Less",
-                less: lessConfig
-            }))
-            .pipe(less(lessConfig))
-            .pipe(gulp.dest(paths.webroot + '/css'));
+gulp.task('less-watch', function () {
+    watchLess('Less/main.less')
+      .pipe(less())
+      .pipe(gulp.dest(paths.webroot + '/css'))
 });
 
 gulp.task("clean:js", function (cb) {
