@@ -6744,8 +6744,8 @@ button.myBtn {
   -ms-user-select: none;
   user-select: none;
   color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #d9534f;
+  border-color: #d43f3a;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
@@ -6790,20 +6790,20 @@ fieldset[disabled] abutton.myBtn {
 button.myBtn:focus,
 button.myBtn.focus {
   color: #fff;
-  background-color: #31b0d5;
-  border-color: #1b6d85;
+  background-color: #c9302c;
+  border-color: #761c19;
 }
 button.myBtn:hover {
   color: #fff;
-  background-color: #31b0d5;
-  border-color: #269abc;
+  background-color: #c9302c;
+  border-color: #ac2925;
 }
 button.myBtn:active,
 button.myBtn.active,
 .open > .dropdown-togglebutton.myBtn {
   color: #fff;
-  background-color: #31b0d5;
-  border-color: #269abc;
+  background-color: #c9302c;
+  border-color: #ac2925;
 }
 button.myBtn:active:hover,
 button.myBtn.active:hover,
@@ -6815,8 +6815,8 @@ button.myBtn:active.focus,
 button.myBtn.active.focus,
 .open > .dropdown-togglebutton.myBtn.focus {
   color: #fff;
-  background-color: #269abc;
-  border-color: #1b6d85;
+  background-color: #ac2925;
+  border-color: #761c19;
 }
 button.myBtn:active,
 button.myBtn.active,
@@ -6832,10 +6832,10 @@ fieldset[disabled] button.myBtn:focus,
 button.myBtn.disabled.focus,
 button.myBtn[disabled].focus,
 fieldset[disabled] button.myBtn.focus {
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #d9534f;
+  border-color: #d43f3a;
 }
 button.myBtn .badge {
-  color: #5bc0de;
+  color: #d9534f;
   background-color: #fff;
 }

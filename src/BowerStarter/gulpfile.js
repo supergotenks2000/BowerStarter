@@ -6,7 +6,8 @@ var gulp = require("gulp"),
     concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify"),
-    less = require("gulp-less");
+    less = require("gulp-less"),
+    watchLess = require("gulp-watch-less");
 
 var paths = {
     webroot: "./wwwroot/"
@@ -21,7 +22,11 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 gulp.task("less", function () {
     return gulp.src('Less/main.less')
-            .pipe(less())
+            .pipe(watchLess("Less/main.less", {
+                name: "Less",
+                less: lessConfig
+            }))
+            .pipe(less(lessConfig))
             .pipe(gulp.dest(paths.webroot + '/css'));
 });
 
