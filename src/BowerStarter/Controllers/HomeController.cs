@@ -20,6 +20,15 @@ namespace BowerStarter.Controllers
             return View();
         }
 
+        public IActionResult Theme()
+        {
+            Random rnd = new Random();
+            int random = rnd.Next(1, 100); //random number between 1 and 100
+            ViewData["Badge"] = random;
+
+            return View();
+        }
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

@@ -35,6 +35,7 @@
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         <li><a asp-controller="Home" asp-action="About">About</a></li>
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="Theme">Theme Options</a></li>
                         <li><a href="~/Index.html">Index [SUCKA!!!]</a></li>
                     </ul>
                     @await Html.PartialAsync("_LoginPartial")
@@ -42,6 +43,7 @@
             </div>
         </nav>
         <div class="container body-content">
+            <br /><br /><br /><br />
             @RenderBody()
             <hr />
             <footer>
