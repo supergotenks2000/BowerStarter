@@ -9,13 +9,34 @@
 <h3>Some Article</h3>
 <p>
     By <span data-bind="text: authorName"></span>
+    (<a data-bind="attr: { href: twitterURL}, text: twitterAlias"></a>)
 </p>
 <p>
     Author Name: <input type="text" data-bind="value: authorName, valueUpdate: 'afterkeydown'" />
+    <button id="btn" data-bind="click: changeCaseTwitterAlias">Upper Case</button>
 </p>
+
 <script>
-    var viewModel = {
-        authorName: ko.observable("Steve Smith")
+    function viewModel() {
+        this.authorName = ko.observable("Steve Smith");
+        this.twitterAlias = ko.observable("@@ardalis");
+        
+        this.twitterURL = ko.computed(function () {
+            return "https://twitter.com/" + this.twitterAlias().replace("@@", "");
+        }, this);
+
+        this.changeCaseTwitterAlias = function () {
+            var currentValue = this.twitterAlias();
+
+            if ($("#btn").text() === "Upper Case") {
+                this.twitterAlias(currentValue.toUpperCase());
+                $("#btn").text("Lower Case");
+            }
+            else {
+                this.twitterAlias(currentValue.toLowerCase());
+                $("#btn").text("Upper Case");
+            }
+        }
     };
     ko.applyBindings(viewModel);
 </script>
