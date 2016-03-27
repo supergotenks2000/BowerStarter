@@ -6,7 +6,7 @@
 
 <br /><br />
 
-<h3>Record</h3>
+<h3>Record <span data-bind="text: displayRecord"></span></h3>
 <table>
     <thead>
         <tr>
@@ -45,6 +45,14 @@
         self.addResult = function () {
             self.gameResults.push(new GameResult("", self.resultChoices[0]));
         }
+
+        self.displayRecord = ko.computed(function () {
+            var wins = self.gameResults().filter(function (value) { return value.result() === "Win"; }).length;
+            var losses = self.gameResults().filter(function (value) { return value.result() === "Loss"; }).length;
+            var ties = self.gameResults().filter(function (value) { return value.result() === "Tie"; }).length;
+
+            return wins + " - " + losses + " - " + ties;
+        }, this);
     };
     ko.applyBindings(new ViewModelRecord);
 </script>
