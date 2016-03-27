@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using BowerStarter.Models;
 
 namespace BowerStarter.Controllers
 {
@@ -49,6 +50,19 @@ namespace BowerStarter.Controllers
         public IActionResult Error()
         {
             return View();
+        }
+
+        [HttpPost]
+        public JsonResult Save([FromBody]GameResult gameResult)
+        {
+            var message = string.Format($"Saved {gameResult.Opponent}");
+            message += string.Format($" with {gameResult.Result}");
+            message += string.Format($" on Twitter {gameResult.IsOnTwitter}");
+
+            if ( gameResult.IsOnTwitter && !String.IsNullOrWhiteSpace(gameResult.TwitterName))
+                message += string.Format($" with name {gameResult.TwitterName}");
+
+            return Json(new { message });
         }
     }
 }

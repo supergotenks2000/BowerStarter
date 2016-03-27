@@ -15,12 +15,13 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody data-bind="template: { name: 'rowTemplate', foreach: gameResults }">
     </tbody>
 </table>
-<button data-bind="click: addResult">Add Result</button>
+<button class="btn btn-primary" data-bind="click: addResult, enable: gameResults().length < 5">Add Result</button>
 
 <script type="text/html" id="rowTemplate">
     <tr>
@@ -32,6 +33,7 @@
         <td><button data-bind="click: $parent.removeResult">Remove</button></td>
         <td><label><input type="checkbox" data-bind="checked: isOnTwitter" />On Twitter</label></td>
         <td><input data-bind="value: twitterName, visible: isOnTwitter" /></td>
+        <td><button class="btn btn-info" data-bind="click: $parent.save">Save</button></td>
     </tr>
 </script>
 
@@ -63,13 +65,37 @@
             var wins = self.gameResults().filter(function (value) { return value.result() === "Win"; }).length;
             var losses = self.gameResults().filter(function (value) { return value.result() === "Loss"; }).length;
             var ties = self.gameResults().filter(function (value) { return value.result() === "Tie"; }).length;
+            var twitters = self.gameResults().filter(function (value) { return value.isOnTwitter() === true; }).length;
 
-            return wins + " - " + losses + " - " + ties;
+            return wins + " - " + losses + " - " + ties + " - On Twitter: " + twitters;
         }, this);
 
         self.removeResult = function () {
             self.gameResults.remove(this);
         };
+
+        this.changeCaseTwitterAlias = function () {
+            var currentValue = this.twitterAlias();
+
+            if ($("#btn").text() === "Upper Case") {
+                this.twitterAlias(currentValue.toUpperCase());
+                $("#btn").text("Lower Case");
+            }
+            else {
+                this.twitterAlias(currentValue.toLowerCase());
+                $("#btn").text("Upper Case");
+            }
+        }
+
+        self.save = function () {
+            $.ajax({
+                url: "Save",
+                type: "post",
+                data: ko.toJSON(this),
+                contentType: "application/json",
+                success: function (result) { alert(result.message) }
+            });
+        }
     };
     ko.applyBindings(new ViewModelRecord);
 </script>
