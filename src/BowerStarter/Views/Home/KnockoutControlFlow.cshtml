@@ -12,17 +12,24 @@
         <tr>
             <th>Opponent</th>
             <th>Result</th>
+            <th></th>
         </tr>
     </thead>
-    <tbody data-bind="foreach: gameResults">
-        <tr>
-            <td><input data-bind="value: opponent" /></td>
-            <td><select data-bind="options: $root.resultChoices, 
-                value: result, optionsText: $data"></select></td>
-        </tr>
+    <tbody data-bind="template: { name: 'rowTemplate', foreach: gameResults }">
     </tbody>
 </table>
-<button data-bind="click: addResult">Add New Result</button>
+<button data-bind="click: addResult">Add Result</button>
+
+<script type="text/html" id="rowTemplate">
+    <tr>
+        <td><input data-bind="value: opponent" /></td>
+        <td>
+            <select data-bind="options: $root.resultChoices,
+                value: result, optionsText: $data"></select>
+        </td>
+        <td><button data-bind="click: $parent.removeResult">Remove</button></td>
+    </tr>
+</script>
 
 <script>
     function GameResult(opponent, result) {
@@ -53,6 +60,10 @@
 
             return wins + " - " + losses + " - " + ties;
         }, this);
+
+        self.removeResult = function () {
+            self.gameResults.remove(this);
+        };
     };
     ko.applyBindings(new ViewModelRecord);
 </script>
