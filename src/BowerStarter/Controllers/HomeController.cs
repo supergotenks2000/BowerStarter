@@ -25,6 +25,11 @@ namespace BowerStarter.Controllers
             return View();
         }
 
+        public IActionResult KnockoutControlFlow()
+        {
+            return View();
+        }
+
         public IActionResult Theme()
         {
             Random rnd = new Random();

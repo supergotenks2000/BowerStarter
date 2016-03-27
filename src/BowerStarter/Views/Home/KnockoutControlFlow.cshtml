@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Knockout";
+}
+
+<h2>@ViewData["Title"].</h2>
+
+<br /><br />
+
+<h3>Record</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Opponent</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: gameResults">
+        <tr>
+            <td data-bind="text: opponent"></td>
+            <td data-bind="text: result"></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    function GameResult(opponent, result) {
+        var self = this;
+        self.opponent = opponent;
+        self.result = ko.observable(result);
+    }
+
+    function ViewModelRecord() {
+        var self = this;
+
+        self.resultChoices = ["Win", "Loss", "Tie"];
+
+        self.gameResults = ko.observableArray([
+            new GameResult("Brendan", self.resultChoices[0]),
+            new GameResult("Brendan", self.resultChoices[0]),
+            new GameResult("Michelle", self.resultChoices[1])
+        ]);
+    };
+    ko.applyBindings(new ViewModelRecord);
+</script>
