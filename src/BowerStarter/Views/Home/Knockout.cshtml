@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Knockout";
+}
+
+<h2>@ViewData["Title"].</h2>
+
+<br /><br />
+
+<h3>Some Article</h3>
+<p>
+    By <span data-bind="text: authorName"></span>
+</p>
+<p>
+    Author Name: <input type="text" data-bind="value: authorName, valueUpdate: 'afterkeydown'" />
+</p>
+<script>
+    var viewModel = {
+        authorName: ko.observable("Steve Smith")
+    };
+    ko.applyBindings(viewModel);
+</script>

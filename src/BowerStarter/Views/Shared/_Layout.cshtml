@@ -9,12 +9,17 @@
             <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
             <link href="~/css/main.css" rel="stylesheet" />
             <link rel="stylesheet" href="~/css/site.css" />
+            <script src="~/lib/knockout/dist/knockout.js"></script>
         </environment>
         <environment names="Staging,Production">
             <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
                   asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
                   asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
             <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+            <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"
+                    asp-fallback-src="~/lib/knockout/dist/knockout.js"
+                    asp-fallback-test="window.jQuery">
+            </script>
         </environment>
         @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
     </head>
@@ -36,6 +41,7 @@
                         <li><a asp-controller="Home" asp-action="About">About</a></li>
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                         <li><a asp-controller="Home" asp-action="Theme">Theme Options</a></li>
+                        <li><a asp-controller="Home" asp-action="Knockout">Knockout</a></li>
                         <li><a href="~/Index.html">Index [SUCKA!!!]</a></li>
                     </ul>
                     @await Html.PartialAsync("_LoginPartial")
@@ -66,7 +72,7 @@
                     asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
             </script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>
-        </environment>
+            </environment>
 
         @RenderSection("scripts", required: false)
     </body>

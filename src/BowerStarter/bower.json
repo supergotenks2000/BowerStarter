@@ -6,6 +6,7 @@
     "jquery": "2.1.4",
     "jquery-validation": "1.14.0",
     "jquery-validation-unobtrusive": "3.2.4",
-    "fotorama": "4.6.4"
+    "fotorama": "4.6.4",
+    "knockout": "3.4.0"
   }
 }
