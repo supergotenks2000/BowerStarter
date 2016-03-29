@@ -1,18 +1,30 @@
 ﻿
 <html>
 <body ng-app="personApp">
-    <h3>Scope</h3>
-    <div ng-controller="personController">
-        <strong>Name: </strong> {{name}}<br />
-        <strong>Missing Property (age): </strong> {{age}}
-    </div>
+    <section id="container">
+        <article style="width:30%;float:left">
+            <h3>Scope</h3>
+            <div ng-controller="personController">
+                <strong>Name: </strong> {{name}}<br />
+                <strong>Missing Property (age): </strong> {{age}}
+            </div>
+        </article>
 
-    <h3>Controllers</h3>
-    <div ng-controller="personController2">
-        <strong>First Name:</strong> {{firstName}}<br />
-        <strong>Last Name:</strong> {{lastName}}
-    </div>
+        <article style="width:30%;float:left">
+            <h3>Controllers</h3>
+            <div ng-controller="personController2">
+                <strong>First Name:</strong> {{firstName}}<br />
+                <strong>Last Name:</strong> {{lastName}}
+            </div>
+        </article>
 
+        <article style="width:30%;float:left">
+            <h3>Factory</h3>
+            <div ng-controller="personController3">
+                <strong>Name:</strong> {{name}}
+            </div>
+        </article>
+</section>
 
     <script src="lib/angular/angular.js"></script>
     <script src="js/scope.js"></script>
