@@ -1,0 +1,18 @@
+﻿
+<html>
+<body ng-app="PersonsApp">
+    <h3>People</h3>
+    <div ng-controller="personController">
+        <ul>
+            <li ng-repeat="person in people">
+                <strong>{{person.FirstName}} {{person.LastName}}</strong>&nbsp;&nbsp;&nbsp;Id = {{person.Id}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/angular3/personapp.js"></script>
+    <script src="js/angular3/personfactory.js"></script>
+    <script src="js/angular3/personcontroller.js"></script>
+</body>
+</html>
