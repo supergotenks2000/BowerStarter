@@ -3,6 +3,7 @@
 /// <reference path="js/angular3/personapp.js" />
 /// <reference path="js/angular3/personcontroller.js" />
 /// <reference path="js/angular3/personfactory.js" />
+/// <reference path="js/controller.js" />
 /// <reference path="js/scope.js" />
 /// <reference path="js/site.js" />
 /// <reference path="js/spa/app.js" />
