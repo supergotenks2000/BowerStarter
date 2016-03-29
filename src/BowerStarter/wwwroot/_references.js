@@ -5,6 +5,10 @@
 /// <reference path="js/angular3/personfactory.js" />
 /// <reference path="js/scope.js" />
 /// <reference path="js/site.js" />
+/// <reference path="js/spa/app.js" />
+/// <reference path="js/spa/personlistcontroller - copy.js" />
+/// <reference path="js/spa/personlistcontroller.js" />
+/// <reference path="js/spa/personroutes.js" />
 /// <reference path="lib/angular/angular.js" />
 /// <reference path="lib/angular-route/angular-route.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
