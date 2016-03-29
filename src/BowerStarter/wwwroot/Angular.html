@@ -1,0 +1,72 @@
+﻿
+<html>
+<body ng-app>
+    <h3>Directives</h3>
+    {{2+2}}
+    <br />
+
+
+    <h3>Databinding</h3>
+    <div ng-init="firstName='John'; lastName='Doe';">
+        <strong>First Name:</strong> {{firstName}} <br />
+        <strong>Last Name:</strong> <span ng-bind="lastName"></span>
+    </div>
+    <br />
+
+
+    <h3>Templates</h3>
+    <div ng-init="personName='John Doe'">
+        <input ng-model="personName" /> {{personName}}
+    </div>
+    <br />
+
+
+    <h3>Expressions</h3>
+    <div ng-init="personName2='John Doe'">
+        Person's name is: {{personName2}}<br />
+        Simple Javascript calculation of 1 + 2: {{1+2}}
+    </div>
+
+
+    <h3>Repeaters</h3>
+    <div id="container">
+        <div ng-init="names=['John Doe', 'Mary Jane', 'Bob Parker']"
+             style="width:20%;float:left;">
+            <ul>
+                <li ng-repeat="name in names">
+                    {{name}}
+                </li>
+            </ul>
+        </div>
+        <div ng-init="names2=[
+             {firstName:'John', lastName:'Doe'},
+             {firstName:'Mary', lastName:'Jane'},
+             {firstName:'Bob', lastName:'Parker'}]"
+             style="width:20%;float:left;">
+            <ul>
+                <li ng-repeat="name2 in names2">
+                    {{name2.firstName + ' ' + name2.lastName}}
+                </li>
+            </ul>
+        </div>
+        <div ng-init="names3=[
+             {firstName:'John', lastName:'Doe'},
+             {firstName:'Mary', lastName:'Jane'},
+             {firstName:'Bob', lastName:'Parker'}]"
+             style="width:60%;float:left;">
+            <ul>
+                <li ng-repeat="name3 in names3">
+                    <strong>{{name3.firstName + ' ' + name3.lastName}}</strong> at index {{$index}}
+                    <span ng-show="{{$first}}">, the <em>first</em> position</span>
+                    <span ng-show="{{$last}}">, the <em>last</em> position</span>
+                    <span ng-show="{{$odd}}">, which is <em>odd</em> numbered</span>
+                    <span ng-show="{{$even}}">, which is <em>even</em> numbered</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="lib/angular/angular.js"></script>
+</body>
+</html>

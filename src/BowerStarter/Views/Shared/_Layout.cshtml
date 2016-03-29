@@ -44,6 +44,8 @@
                         <li><a asp-controller="Home" asp-action="Knockout">Knockout</a></li>
                         <li><a asp-controller="Home" asp-action="KnockoutControlFlow">Knockout - Control Flow</a></li>
                         <li><a href="~/Index.html">Index [SUCKA!!!]</a></li>
+                        <li><a href="~/Angular.html">Angular</a></li>
+                        <li><a href="~/Angular2.html">Angular (2)</a></li>
                     </ul>
                     @await Html.PartialAsync("_LoginPartial")
                 </div>
@@ -62,6 +64,7 @@
             <script src="~/lib/jquery/dist/jquery.js"></script>
             <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
             <script src="~/js/site.js" asp-append-version="true"></script>
+            <script src="~/lib/angular/angular.js"></script>
         </environment>
         <environment names="Staging,Production">
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
@@ -71,6 +74,10 @@
             <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
                     asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                     asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+            </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"
+                    asp-fallback-src="~/lib/angular/angular.min.js"
+                    asp-fallback-test="window.angular">
             </script>
             <script src="~/js/site.min.js" asp-append-version="true"></script>
             </environment>
