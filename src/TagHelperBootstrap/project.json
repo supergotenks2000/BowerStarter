@@ -1,0 +1,17 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "TagHelperBootstrap Class Library",
+  "authors": [ "Austin" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final"
+  },
+
+  "frameworks": {
+    "net451": { },
+    "dnxcore50": { }
+  }
+}

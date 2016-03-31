@@ -83,3 +83,101 @@
         </div>
     </div>
 </nav>
+
+<br /><br />
+
+<h3>Modals - Using TagHelpers</h3>
+<div class="sample">
+    <h3>Simple Modal:</h3>
+    <button type="button"
+            class="btn btn-primary btn-lg"
+            bs-toggle-modal="simpleModal">
+        Launch modal
+    </button>
+    <modal id="simpleModal"
+           title="Modal Title">
+        <modal-body>
+            <h4>Something happened</h4>
+            <p>Something happened</p>
+        </modal-body>
+    </modal>
+
+    <h4>Code:</h4>
+    <pre><code class="html">&lt;button type=&quot;button&quot; 
+        class=&quot;btn btn-primary btn-lg&quot; 
+        bs-toggle-modal=&quot;simpleModal&quot;&gt;
+    Launch modal
+&lt;/button&gt;
+&lt;modal id=&quot;simpleModal&quot; 
+            title=&quot;Modal Title&quot; &gt;
+    &lt;modal-body&gt;
+        &lt;h4&gt;Something happened&lt;/h4&gt;
+        &lt;p&gt;Something happened&lt;/p&gt;
+    &lt;/modal-body&gt;
+&lt;/modal&gt;</code></pre>
+</div>
+
+
+<div class="sample">
+    <h3>Simple Modal toggle from Anchor Tag:</h3>
+    <a href="#" bs-toggle-modal="simpleModalFromAnchor">
+        Launch modal
+    </a>
+    <modal id="simpleModalFromAnchor"
+           title="Modal Title">
+        <modal-body>
+            <h4>Something happened</h4>
+            <p>Something happened</p>
+        </modal-body>
+    </modal>
+
+    <h4>Code:</h4>
+    <pre><code class="html">
+&lt;a href=&quot;#&quot; bs-toggle-modal=&quot;simpleModalFromAnchor&quot;&gt;
+    Launch modal
+&lt;/a&gt;
+&lt;modal id=&quot;simpleModalFromAnchor&quot;
+        title=&quot;Modal Title&quot;&gt;
+    &lt;modal-body&gt;
+        &lt;h4&gt;Something happened&lt;/h4&gt;
+        &lt;p&gt;Something happened&lt;/p&gt;
+    &lt;/modal-body&gt;
+&lt;/modal&gt;</code></pre>
+</div>
+
+<div class="sample">
+    <h3>Simple Modal with Footer:</h3>
+    <button type="button"
+            class="btn btn-primary btn-lg"
+            bs-toggle-modal="simpleModalWithFooter">
+        Launch modal
+    </button>
+    <modal id="simpleModalWithFooter"
+           title="Modal Title">
+        <modal-body>
+            <h4>Something happened</h4>
+            <p>Something happened</p>
+        </modal-body>
+        <modal-footer dismiss-text="Close">
+            <button type="button" class="btn btn-primary">Save Changes</button>
+        </modal-footer>
+    </modal>
+
+    <h4>Code:</h4>
+    <pre><code class="html">
+&lt;button type=&quot;button&quot;
+        class=&quot;btn btn-primary btn-lg&quot;
+        bs-toggle-modal=&quot;simpleModalWithFooter&quot;&gt;
+    Launch modal
+&lt;/button&gt;
+&lt;modal id=&quot;simpleModalWithFooter&quot;
+        title=&quot;Modal Title&quot;&gt;
+    &lt;modal-body&gt;
+        &lt;h4&gt;Something happened&lt;/h4&gt;
+        &lt;p&gt;Something happened&lt;/p&gt;
+    &lt;/modal-body&gt;
+    &lt;modal-footer dismiss-text=&quot;Close&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save Changes&lt;/button&gt;
+    &lt;/modal-footer&gt;
+&lt;/modal&gt;</code></pre>
+</div>
